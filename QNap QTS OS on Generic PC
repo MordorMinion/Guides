@@ -1,0 +1,36 @@
+Sources: 
+- https://mybroadband.co.za/forum/threads/turn-pc-into-a-qnap-unit.1115886/
+- https://www.reddit.com/r/qnap/comments/se1083/qnap_booting_on_msi_cubi_d/
+- https://www.reddit.com/r/qnap/comments/v92985/rocket_lake_with_uhd730_on_qnap/
+
+Guide from source (1), same steps but adjusted phrasing: 
+1. Download https://mega.nz/folder/LJ4wyaDY#MxOC2UgNqC-Y6gQXu-IUFA
+2. Write .img using Win32DiskImager
+3. Boot from usb, immediately press down arrow to prevent autoboot
+4. Press (a) to boot TinyCore
+5. Right click, choose Applications --> terminal
+6. Issue the following commands:
+'''
+sudo su
+vi ./my_create_qnap_boot
+'''
+
+7. Press (i) to edit
+8. Change Model, Patched, download to reflect options below, quts or hero
+9. Press (esc) to quit edit mode in vi
+10. Type (:wq) to save and exit
+11. Issue "sudo ./my_create_qnap_boot". It should connect and download, let it all complete
+12. Reboot from usb and let it do its thing, does take a while.
+13. A mac address and IP should appear, login via browser
+Latest Quts
+
+MODEL_TYPE="QY380_QY390_10_11"
+PATCHED_FIRMWARE="TS-X85_20201123-4.5.1.1495"
+DOWNLOAD_URL="https://download.qnap.com/Storage/TS-X85/"
+
+The above does not work, need to change to the below: 
+MODEL_TYPE="QY380_QY390_10_11"
+PATCHED_FIRMWARE="TS-X85_20230416-4.5.4.2374"
+DOWNLOAD_URL="https://eu1.qnap.com/Storage/TS-X85/"
+
+Once installed, set it up through the webui. Can upgrade firmware to QTS 5
