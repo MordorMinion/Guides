@@ -1,0 +1,12 @@
+Cataloging how I was able to reach < C2 states on Proxmox with consumer hardware
+
+System
+| Component    | Name |  Out of the box ASPM  | Modified to work |
+| Motherboard | ASUS Prime H670 Plus D4 | N/A | |
+| CPU  | Intel i3-13100T    | N/A | |
+| RAM | 4x16GB DDR4 3200MHz     | N/A | |
+| NVME    | (1) Samsung 980 512GB   | Yes | |
+| SSD    | (1) Samsung MZ7LM1T9HMJP0D3 PM863a 1.92TB SATA | Unknown | |
+| HBA    | Dell HBA330 | No | Guide: https://github.com/notthebee/AutoASPM |
+| HDD    | (4) ST18000NM4J  | N/A | OpenSeaChest |
+| Eth    | Realtek RTL8125 | No | Guide: https://blog.kumo.dev/2022/12/07/realtek_drivers_proxmox.html |
