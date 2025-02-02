@@ -10,3 +10,9 @@ System
 | HBA         | Dell HBA330             | No                    | Guide: https://github.com/notthebee/AutoASPM |
 | HDD         | (4) ST18000NM4J         | N/A                   | OpenSeaChest |
 | Eth         | Realtek RTL8125         | No                    | Guide: https://blog.kumo.dev/2022/12/07/realtek_drivers_proxmox.html & https://forums.unraid.net/topic/141349-plugin-realtek-r8125-r8126-r8168-and-r815267-drivers/page/9/#comment-1379870 |
+
+
+Commands 
+echo -n powersave > /sys/module/pcie_aspm/parameters/policy
+powertop --auto-tune
+echo "powersave" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
