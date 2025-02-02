@@ -23,3 +23,4 @@ Guides:
 - https://github.com/notthebee/AutoASPM
 - https://www.reddit.com/r/debian/comments/8c6ytj/active_state_power_management_aspm/
 - https://www.reddit.com/r/homelab/comments/1ck60qp/debugging_why_aspm_is_disabled/
+- http://ftp.dei.uc.pt/pub/linux/kernel/people/mcgrof/aspm/enable-aspm
