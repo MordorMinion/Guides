@@ -25,3 +25,6 @@ Guides:
 - https://www.reddit.com/r/debian/comments/8c6ytj/active_state_power_management_aspm/
 - https://www.reddit.com/r/homelab/comments/1ck60qp/debugging_why_aspm_is_disabled/
 - http://ftp.dei.uc.pt/pub/linux/kernel/people/mcgrof/aspm/enable-aspm
+
+/etc/default/grub:
+BOOT_IMAGE=/boot/vmlinuz-6.8.12-8-pve root=/dev/mapper/pve-root ro quiet intel_iommu=on iommu=pt pci=noaer pcie_acs_override=downstream,multifunction initcall_blacklist=sysfb_init video=simplefb:off video=vesafb:off video=efifb:off video=vesa:off disable_vga=1 vfio_iommu_type1.allow_unsafe_interrupts=1 kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu pcie_aspm=force
