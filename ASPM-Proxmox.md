@@ -17,6 +17,7 @@ Commands
 echo -n powersave > /sys/module/pcie_aspm/parameters/policy
 powertop --auto-tune
 echo "powersave" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+lspci -vv | awk '/ASPM/{print $0}' RS= | grep --color -P '(^[a-z0-9:.]+|ASPM )'
 
 Guides:
 - https://blog.kumo.dev/2022/12/07/realtek_drivers_proxmox.html & https://forums.unraid.net/topic/141349-plugin-realtek-r8125-r8126-r8168-and-r815267-drivers/page/9/#comment-1379870
