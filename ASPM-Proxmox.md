@@ -21,3 +21,5 @@ echo "powersave" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governo
 Guides:
 - https://blog.kumo.dev/2022/12/07/realtek_drivers_proxmox.html & https://forums.unraid.net/topic/141349-plugin-realtek-r8125-r8126-r8168-and-r815267-drivers/page/9/#comment-1379870
 - https://github.com/notthebee/AutoASPM
+- https://www.reddit.com/r/debian/comments/8c6ytj/active_state_power_management_aspm/
+- https://www.reddit.com/r/homelab/comments/1ck60qp/debugging_why_aspm_is_disabled/
