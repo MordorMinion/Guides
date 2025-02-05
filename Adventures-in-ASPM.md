@@ -56,3 +56,7 @@ echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
 # prefer lower power consumption over more performance.
 echo 15 | tee /sys/devices/system/cpu/cpu*/power/energy_perf_bias > /dev/null
 ```
+
+
+NVME interrupts were HUGE, attempting to follow Andrew H's answer here: 
+- https://serverfault.com/questions/1052448/how-can-i-override-irq-affinity-for-nvme-devices/1063201#1063201
