@@ -28,3 +28,31 @@ Guides:
 
 /etc/default/grub:
 BOOT_IMAGE=/boot/vmlinuz-6.8.12-8-pve root=/dev/mapper/pve-root ro quiet intel_iommu=on iommu=pt pci=noaer pcie_acs_override=downstream,multifunction initcall_blacklist=sysfb_init video=simplefb:off video=vesafb:off video=efifb:off video=vesa:off disable_vga=1 vfio_iommu_type1.allow_unsafe_interrupts=1 kvm.ignore_msrs=1 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu pcie_aspm=force
+
+
+Resources:
+- https://github.com/lanceshelton/irqstat (How to tell what is waking the system)
+- https://forums.servethehome.com/index.php?threads/is-aspm-working.45359/
+```
+# even though disabled in the BIOS, powertop thinks that the onboard ethernet adapters still have wakeup functions enables. so we switch this off.
+echo disabled > /sys/class/net/eno1/device/power/wakeup
+echo disabled > /sys/class/net/eno2/device/power/wakeup
+
+# cpu freq scaling governor using intel_pstate.
+echo powersave | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor > /dev/null
+
+# enery <-> performance bias.
+echo balance_power | tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference > /dev/null
+
+# aspm power saving.
+echo powersupersave > /sys/module/pcie_aspm/parameters/policy
+
+# powertop thinks some NMI watchdog is enabled. this switches the watchdog off.
+echo 0 > /proc/sys/kernel/nmi_watchdog
+
+# optimisation from powertop.
+echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
+
+# prefer lower power consumption over more performance.
+echo 15 | tee /sys/devices/system/cpu/cpu*/power/energy_perf_bias > /dev/null
+```
