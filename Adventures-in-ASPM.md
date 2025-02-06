@@ -1,4 +1,5 @@
-Cataloging how I was able to reach < C2 states on Proxmox with consumer hardware
+Notes on ASPM adventures 
+I have currently only been able to reach C3.
 
 System
 | Component   | Name                    |  Out of the box ASPM  | Modified to work |
@@ -12,6 +13,8 @@ System
 | HDD         | (4) ST18000NM4J         | N/A                   | OpenSeaChest     |
 | Eth         | Realtek RTL8125         | No                    |                  |
 
+Kernel Parameters:
+CONFIG_PCIEASPM=y
 
 Commands 
 echo -n powersave > /sys/module/pcie_aspm/parameters/policy
