@@ -15,6 +15,10 @@ System
 
 Kernel Parameters:
 CONFIG_PCIEASPM=y
+pcie_aspm=force
+pcie=noaer
+pcie=nommconf
+pcie=nomsi
 
 Commands 
 echo -n powersave > /sys/module/pcie_aspm/parameters/policy
