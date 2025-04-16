@@ -23,7 +23,9 @@ pcie_aspm.policy=powersave
 pcie_aspm.enable=1
 
 pcie=nomsi: Disables Message Signaled Interrupts (MSI) and forces the use of legacy IRQs. While not directly related to ASPM, MSI can sometimes interact with power management features.
+
 pcie=noaer: Disables Advanced Error Reporting (AER) for PCI Express. AER helps in detecting and reporting hardware errors, and disabling it might be useful for troubleshooting certain power-related issues, but it's generally not recommended for normal operation.
+
 pcie=nommconf: Disables PCIe enhanced configuration mechanism (MMCONFIG). This is a legacy option and generally not needed on modern systems. It might be relevant in very specific compatibility scenarios but is unlikely to directly affect ASPM in most cases.
 
 Commands 
